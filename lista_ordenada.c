@@ -52,17 +52,17 @@ int lista_ordenada_tamanho(Lista_Ordenada *l) {
 
 int inserir_ordenada(Lista_Ordenada *l, Item *i) {
     if(lista_ordenada_cheia(l)) {
-        l->comp_inserir_ordenada++;
+        l->comp_inserir_ordenada+=3; // São feitas duas comparações tanto para retornar verdadeiro quanto para falso e outra nesse if
         l->atr_inserir_ordenada+=2;
         return FALSO;
     }
     int j;
     for (j = 0; j < l->qtd; j++){
-        l->comp_inserir_ordenada++; //Referente a j < lista_ordenada_tamanho(l) quando o resultado é verdadeiro
+        l->comp_inserir_ordenada+=2; //Referente a j < lista_ordenada_tamanho(l) quando o resultado é verdadeiro e o ppróximo if
         l->atr_inserir_ordenada+=3; //Referente a j++, l->comp_inserir_ordenada++ e o próprio l->atr_inserir_ordenada
         if(get_itemlado(l->dados[j]) > get_itemlado(i)){
-            l->comp_inserir_ordenada++;
-            l->atr_inserir_ordenada+=2; //Referente a k = lista_ordenada_tamanho(l) e o próprio l->atr_inserir_ordenada
+            l->comp_inserir_ordenada++; //Referente a k > j do próximo for
+            l->atr_inserir_ordenada+=3; //Referente a k = lista_ordenada_tamanho(l)
             for (int k = lista_ordenada_tamanho(l); k > j; k--) {
                 l->dados[j + 1] = l->dados[j];
                 l->comp_inserir_ordenada++; //Referente a k > j
@@ -73,8 +73,8 @@ int inserir_ordenada(Lista_Ordenada *l, Item *i) {
     }
     l->dados[j] = i;
     l->qtd++;
-    l->comp_inserir_ordenada++; //Referente a última comparação de j < lista_ordenada_tamanho(l) quando o resultado é falso
-    l->atr_inserir_ordenada+=5; //Referente a j = 0,  l->dados[j] = i,  l->qtd++, l->comp_inserir_ordenada++ e o próprio l->atr_inserir_ordenada
+    l->comp_inserir_ordenada+=4; //Referente a última comparação de j < lista_ordenada_tamanho(l) quando o resultado é falso e o primeiro if
+    l->atr_inserir_ordenada+=5; //Referente a j = 0 quando retorna false,  l->dados[j] = i,  l->qtd++, l->comp_inserir_ordenada++ e o próprio l->atr_inserir_ordenada
     return VERDADEIRO;
 }
 
@@ -133,39 +133,38 @@ int busca_binaria_lista_ordenada(Lista_Ordenada *l, unsigned int lado) {
     int meio = 1;
     int maior = fim;
 
-    /*if(inicio >= fim){
-        maior = inicio;
-    }
-    else{
-        maior = fim;
-    }*/
-
-    l->atr_busca_ordenada+=3; //Referente a int inicio = 0, fim = lista_ordenada_tamanho(l) - 1 e e o próprio l->atr_inserir_ordenada
+    l->comp_busca_ordenada+=2; // A lista_ordenada_tamanho(l) realiza uma comparação e a última comparação do while com resultado falso
+    l->atr_busca_ordenada+=6;
 
     while (meio <= maior && meio > 0){
         meio = (fim + inicio) / 2;
 
+        l->comp_busca_ordenada+=2;
+        l->atr_busca_ordenada+=3;
+
         if(meio == lista_ordenada_tamanho(l)){ //Como a lista vai de 0 a 999, o elemento de posição 1000 não existe
+            l->comp_busca_ordenada+=2; // A lista_ordenada_tamanho(l) realiza uma comparação e a outra do if
+            l->atr_busca_ordenada+=2;
             return FALSO;
         }
 
-        l->comp_busca_ordenada++;
-        l->atr_busca_ordenada += 3; //Referente a meio = (fim + inicio)/2, l->comp_inserir_ordenada++ e o próprio l->atr_inserir_ordenada
         if (get_itemlado(l->dados[meio]) == lado) {
             //imprimir_item(l->dados[meio]);
-            l->comp_busca_ordenada++;
+            l->comp_busca_ordenada+=2; //Referente aos dois ifs
             l->atr_busca_ordenada += 2;
             return VERDADEIRO;
-        } else if (get_itemlado(l->dados[meio]) > lado) {
+        }
+        else if (get_itemlado(l->dados[meio]) > lado) {
             if(get_itemlado(l->dados[meio]) >= get_itemlado(l->dados[inicio])){
                 fim = meio - 1;
             }
             else{
                 inicio = meio + 1;
             }
-            l->comp_busca_ordenada += 2; //Referente ao if e else if
+            l->comp_busca_ordenada += 4; //Referente aos ifs e o else if
             l->atr_busca_ordenada += 3; //Referente a fim = meio - 1, l->comp_inserir_ordenada++ e o próprio l->atr_inserir_ordenada
-        } else {
+        }
+        else {
             if(get_itemlado(l->dados[meio]) >= get_itemlado(l->dados[inicio])){
                 inicio = meio + 1;
             }
@@ -173,14 +172,11 @@ int busca_binaria_lista_ordenada(Lista_Ordenada *l, unsigned int lado) {
                 fim = meio - 1;
             }
 
-            l->comp_busca_ordenada += 2;//Referente ao if e else if
+            l->comp_busca_ordenada += 4;//Referente aos ifs e o else if
             l->atr_busca_ordenada += 3; //Referente a inicio = meio + 1, l->comp_inserir_ordenada++ e o próprio l->atr_inserir_ordenada
         }
     }
 
-
-    l->comp_busca_ordenada++;
-    l->atr_busca_ordenada+=2;//Referente a última comparação com resultado falso
     //printf("Elemento nao encontrado!\n");
     return  FALSO;
 }

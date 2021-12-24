@@ -120,7 +120,7 @@ int inserir_fim_lista_encadeada(Lista_Encadeada *l, Item *i) {
         tmp->prox = aux;
         l->tam++;
 
-        l->comp_inserir_encadeada+=2;
+        l->comp_inserir_encadeada+=3;
         l->atr_inserir_encadeada+=5;
     }
 
@@ -211,7 +211,7 @@ int buscar_elemento_lista_encadeada(Lista_Encadeada *l, unsigned int lado) {
     }
     if(atual == NULL){
         //printf("Elemento nao encontrado!\n");
-        l->comp_busca_encadeada+=2;
+        l->comp_busca_encadeada+=2; // Será verificado o atual != NULL e retornando false entrará nesse if
         l->atr_busca_encadeada+=3; //Referente a *atual = l->primeiro, l->comp_busca_encadeada+=2 e l->atr_busca_encadeada+=2
         return FALSO;
     }
