@@ -12,47 +12,33 @@ C:/Users/rhuan/Desktop/Ceferno/Lab. Estrutura de Dados/Codigos/Atividades/Avalia
 quadrado.h
 C:/Users/rhuan/Desktop/Ceferno/Lab. Estrutura de Dados/Codigos/Atividades/Avaliacao1-RhuanLucasBarbosaFernandes/Quadrado.h
 
-C:/Users/rhuan/Desktop/Ceferno/Lab. Estrutura de Dados/Codigos/Atividades/Avaliacao1-RhuanLucasBarbosaFernandes/lista_encadeada.c
+C:/Users/rhuan/Desktop/Ceferno/Lab. Estrutura de Dados/Codigos/Atividades/Avaliacao1-RhuanLucasBarbosaFernandes/lista_encadeada.h
+item.h
+C:/Users/rhuan/Desktop/Ceferno/Lab. Estrutura de Dados/Codigos/Atividades/Avaliacao1-RhuanLucasBarbosaFernandes/item.h
+
+C:/Users/rhuan/Desktop/Ceferno/Lab. Estrutura de Dados/Codigos/Atividades/Avaliacao1-RhuanLucasBarbosaFernandes/lista_ordenada.h
+item.h
+C:/Users/rhuan/Desktop/Ceferno/Lab. Estrutura de Dados/Codigos/Atividades/Avaliacao1-RhuanLucasBarbosaFernandes/item.h
+
+C:/Users/rhuan/Desktop/Ceferno/Lab. Estrutura de Dados/Codigos/Atividades/Avaliacao1-RhuanLucasBarbosaFernandes/lista_sequencial.h
+item.h
+C:/Users/rhuan/Desktop/Ceferno/Lab. Estrutura de Dados/Codigos/Atividades/Avaliacao1-RhuanLucasBarbosaFernandes/item.h
+
+C:/Users/rhuan/Desktop/Ceferno/Lab. Estrutura de Dados/Codigos/Atividades/Avaliacao1-RhuanLucasBarbosaFernandes/main.c
 stdio.h
 -
 stdlib.h
 -
 time.h
 -
-lista_encadeada.h
-C:/Users/rhuan/Desktop/Ceferno/Lab. Estrutura de Dados/Codigos/Atividades/Avaliacao1-RhuanLucasBarbosaFernandes/lista_encadeada.h
+Quadrado.h
+C:/Users/rhuan/Desktop/Ceferno/Lab. Estrutura de Dados/Codigos/Atividades/Avaliacao1-RhuanLucasBarbosaFernandes/Quadrado.h
 item.h
 C:/Users/rhuan/Desktop/Ceferno/Lab. Estrutura de Dados/Codigos/Atividades/Avaliacao1-RhuanLucasBarbosaFernandes/item.h
-
-C:/Users/rhuan/Desktop/Ceferno/Lab. Estrutura de Dados/Codigos/Atividades/Avaliacao1-RhuanLucasBarbosaFernandes/lista_encadeada.h
-item.h
-C:/Users/rhuan/Desktop/Ceferno/Lab. Estrutura de Dados/Codigos/Atividades/Avaliacao1-RhuanLucasBarbosaFernandes/item.h
-
-C:/Users/rhuan/Desktop/Ceferno/Lab. Estrutura de Dados/Codigos/Atividades/Avaliacao1-RhuanLucasBarbosaFernandes/lista_ordenada.c
-stdio.h
--
-stdlib.h
--
-lista_ordenada.h
-C:/Users/rhuan/Desktop/Ceferno/Lab. Estrutura de Dados/Codigos/Atividades/Avaliacao1-RhuanLucasBarbosaFernandes/lista_ordenada.h
-item.h
-C:/Users/rhuan/Desktop/Ceferno/Lab. Estrutura de Dados/Codigos/Atividades/Avaliacao1-RhuanLucasBarbosaFernandes/item.h
-
-C:/Users/rhuan/Desktop/Ceferno/Lab. Estrutura de Dados/Codigos/Atividades/Avaliacao1-RhuanLucasBarbosaFernandes/lista_ordenada.h
-item.h
-C:/Users/rhuan/Desktop/Ceferno/Lab. Estrutura de Dados/Codigos/Atividades/Avaliacao1-RhuanLucasBarbosaFernandes/item.h
-
-C:/Users/rhuan/Desktop/Ceferno/Lab. Estrutura de Dados/Codigos/Atividades/Avaliacao1-RhuanLucasBarbosaFernandes/lista_sequencial.c
-stdio.h
--
-stdlib.h
--
 lista_sequencial.h
 C:/Users/rhuan/Desktop/Ceferno/Lab. Estrutura de Dados/Codigos/Atividades/Avaliacao1-RhuanLucasBarbosaFernandes/lista_sequencial.h
-item.h
-C:/Users/rhuan/Desktop/Ceferno/Lab. Estrutura de Dados/Codigos/Atividades/Avaliacao1-RhuanLucasBarbosaFernandes/item.h
-
-C:/Users/rhuan/Desktop/Ceferno/Lab. Estrutura de Dados/Codigos/Atividades/Avaliacao1-RhuanLucasBarbosaFernandes/lista_sequencial.h
-item.h
-C:/Users/rhuan/Desktop/Ceferno/Lab. Estrutura de Dados/Codigos/Atividades/Avaliacao1-RhuanLucasBarbosaFernandes/item.h
+lista_ordenada.h
+C:/Users/rhuan/Desktop/Ceferno/Lab. Estrutura de Dados/Codigos/Atividades/Avaliacao1-RhuanLucasBarbosaFernandes/lista_ordenada.h
+lista_encadeada.h
+C:/Users/rhuan/Desktop/Ceferno/Lab. Estrutura de Dados/Codigos/Atividades/Avaliacao1-RhuanLucasBarbosaFernandes/lista_encadeada.h
 

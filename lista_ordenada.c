@@ -58,13 +58,13 @@ int inserir_ordenada(Lista_Ordenada *l, Item *i) {
     }
     int j;
     for (j = 0; j < l->qtd; j++){
-        l->comp_inserir_ordenada+=2; //Referente a j < lista_ordenada_tamanho(l) quando o resultado é verdadeiro e o ppróximo if
+        l->comp_inserir_ordenada+=2; //Referente a j < lista_ordenada_t+amanho(l) quando o resultado é verdadeiro e o próximo if
         l->atr_inserir_ordenada+=3; //Referente a j++, l->comp_inserir_ordenada++ e o próprio l->atr_inserir_ordenada
         if(get_itemlado(l->dados[j]) > get_itemlado(i)){
             l->comp_inserir_ordenada++; //Referente a k > j do próximo for
             l->atr_inserir_ordenada+=3; //Referente a k = lista_ordenada_tamanho(l)
-            for (int k = lista_ordenada_tamanho(l); k > j; k--) {
-                l->dados[j + 1] = l->dados[j];
+            for (int k = l->qtd; k > j; k--) {
+                l->dados[k] = l->dados[k-1];
                 l->comp_inserir_ordenada++; //Referente a k > j
                 l->atr_inserir_ordenada+=4; //Referente a k--, l->dados[j + 1] = l->dados[j], l->comp_inserir_ordenada++ e o próprio l->atr_inserir_ordenada
             }
@@ -155,24 +155,15 @@ int busca_binaria_lista_ordenada(Lista_Ordenada *l, unsigned int lado) {
             return VERDADEIRO;
         }
         else if (get_itemlado(l->dados[meio]) > lado) {
-            if(get_itemlado(l->dados[meio]) >= get_itemlado(l->dados[inicio])){
-                fim = meio - 1;
-            }
-            else{
-                inicio = meio + 1;
-            }
-            l->comp_busca_ordenada += 4; //Referente aos ifs e o else if
+            fim = meio - 1;
+
+            l->comp_busca_ordenada += 3; //Referente aos ifs e o else if
             l->atr_busca_ordenada += 3; //Referente a fim = meio - 1, l->comp_inserir_ordenada++ e o próprio l->atr_inserir_ordenada
         }
         else {
-            if(get_itemlado(l->dados[meio]) >= get_itemlado(l->dados[inicio])){
-                inicio = meio + 1;
-            }
-            else{
-                fim = meio - 1;
-            }
+            inicio = meio + 1;
 
-            l->comp_busca_ordenada += 4;//Referente aos ifs e o else if
+            l->comp_busca_ordenada += 3;//Referente aos ifs e o else if
             l->atr_busca_ordenada += 3; //Referente a inicio = meio + 1, l->comp_inserir_ordenada++ e o próprio l->atr_inserir_ordenada
         }
     }

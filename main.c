@@ -18,9 +18,10 @@ int preencher_listas_crescente(Lista_Sequencial *ls, Lista_Ordenada *lo, Lista_E
         x = rand() % 100;
         y = rand() % 100;
 
-        inserir_fim_lista_sequencial(ls, criar_Item(chave, x, y, lado));
-        inserir_ordenada(lo, criar_Item(chave, x, y, lado));
-        inserir_fim_lista_encadeada(le, criar_Item(chave, x, y, lado));
+        Item *i = criar_Item(chave, x, y, lado);
+        inserir_fim_lista_sequencial(ls,i);
+        inserir_ordenada(lo, i);
+        inserir_fim_lista_encadeada(le, i);
     }
     return 1;
 }
@@ -37,9 +38,10 @@ int preencher_listas_decrescente(Lista_Sequencial *ls, Lista_Ordenada *lo, Lista
         y = rand() % 100;
         k++;
 
-        inserir_fim_lista_sequencial(ls, criar_Item(chave, x, y, lado));
-        inserir_ordenada(lo, criar_Item(chave, x, y, lado));
-        inserir_fim_lista_encadeada(le, criar_Item(chave, x, y, lado));
+        Item *i = criar_Item(chave, x, y, lado);
+        inserir_fim_lista_sequencial(ls, i);
+        inserir_ordenada(lo, i);
+        inserir_fim_lista_encadeada(le, i);
 
     }
     return 1;
@@ -73,21 +75,19 @@ int preencher_listas_aleatorio(Lista_Sequencial *ls, Lista_Ordenada *lo, Lista_E
 
     randomize(vet, quantidade);
 
-    /*for(int i=1; i<=quantidade;i++){
-        printf("%.0f, ", vet[i-1]);
-    }*/
 
     int chave;
     float lado, x, y;
     for(int i=1; i <= quantidade; i++){
-        chave = vet[i];
-        lado = i;
+        chave = vet[i-1];
+        lado = vet[i-1];
         x = rand() % 100;
         y = rand() % 100;
 
-        inserir_fim_lista_sequencial(ls, criar_Item(chave, x, y, lado));
-        inserir_ordenada(lo, criar_Item(chave, x, y, lado));
-        inserir_fim_lista_encadeada(le, criar_Item(chave, x, y, lado));
+        Item *it = criar_Item(chave, x, y, lado);
+        inserir_fim_lista_sequencial(ls, it);
+        inserir_ordenada(lo, it);
+        inserir_fim_lista_encadeada(le, it);
     }
     return 1;
 }
@@ -95,7 +95,7 @@ int preencher_listas_aleatorio(Lista_Sequencial *ls, Lista_Ordenada *lo, Lista_E
 int buscas(Lista_Sequencial *ls, Lista_Ordenada *lo, Lista_Encadeada *le, unsigned int lado, unsigned int quantidade){
     for(int i=0; i < quantidade; i++){
         buscar_elemento_lista_sequencial(ls, lado);
-        //busca_binaria_lista_ordenada(lo, lado);
+        busca_binaria_lista_ordenada(lo, lado);
         buscar_elemento_lista_encadeada(le, lado);
     }
 

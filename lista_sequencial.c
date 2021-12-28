@@ -138,8 +138,7 @@ void liberar_lista_sequencial(Lista_Sequencial **l) {
 }
 
 int buscar_elemento_lista_sequencial(Lista_Sequencial *l, unsigned int lado) {
-    if (l->qtd == 0){
-        //printf("Lista Vazia!\n");
+    if (l->qtd == 0 || lado > l->qtd){
         l->comp_busca_sequencial++;
         l->atr_busca_sequencial+=2;
         return FALSO;
